@@ -1,0 +1,37 @@
+@import './../styles/vars'
+
+.app-container
+  justify-content: center
+
+.form
+  display: grid
+  background-color: var(--gray-color-2)
+  align-self: center
+  padding: 5px
+  border-radius: 5px
+  box-shadow: 0px 0px 5px 0px #000
+
+.form-title
+  text-align: center
+  margin-bottom: 10px
+
+.form-inputs
+  display: flex
+  flex-direction: column
+
+.form-send
+  background-color: var(--primary-color)
+  color: white
+  font-weight: bold
+  padding: 5px
+  border: 1px solid white
+  border-radius: 5px
+  cursor: pointer
+
+
+.form-send:hover
+  background-color: var(--color-1)
+
+.form-send:disabled
+  cursor: not-allowed
+  background-color: gray

@@ -1,0 +1,39 @@
+@import './../../styles/vars'
+
+.menu
+  display: flex
+  height: 10vh
+  justify-content: space-between
+  border-bottom: 1px solid black
+  background-color: var(--secondary-color)
+
+.menu-title
+  display: flex
+  color: var(--title-color)
+  align-items: center
+  padding: 0px 10px
+
+.menu-nav
+  display: flex
+
+.menu-list
+  display: flex
+
+.menu-item
+  display: flex
+  align-items: center
+  background-color: var(--secondary-color-2)
+
+.menu-item > a
+  display: flex
+  height: 100%
+  align-items: center
+  padding: 0px 10px
+  color: var(--title-color)
+  font-weight: bold
+
+.active
+  background-color: var(--color-1)
+
+.menu-item:hover
+  background-color: var(--gray-color)
