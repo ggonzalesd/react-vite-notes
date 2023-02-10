@@ -13,11 +13,10 @@ function Signin() {
 
   const signin = (e:{preventDefault:()=>void}) => {
     e.preventDefault()
-    if(!auth?.signin(username.value, display.value, password.value)) {
-      username.thrower()
-      display.thrower()
-      password.thrower()
-    }
+    auth?.signin(username.value, display.value, password.value)
+    username.thrower()
+    display.thrower()
+    password.thrower()
   }
 
   return (

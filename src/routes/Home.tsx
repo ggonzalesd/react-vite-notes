@@ -2,6 +2,8 @@ import FormInputString from "../components/FormInputString"
 import { useAuth } from "../context/useAuth"
 import useInputString from "../hooks/useInputString"
 import useNotes from "../hooks/useNotes"
+import { BsFillLockFill, BsFillUnlockFill } from 'react-icons/bs'
+import { FaTrash } from 'react-icons/fa'
 
 import './Home.sass'
 
@@ -18,31 +20,43 @@ function Home() {
   }
 
   return (
-    <div>
+    <div className="notes">
       <h2>Create Notes</h2>
-      <div>
+      <div className="notes-input">
         <FormInputString type='text' name='Insert Data' data={template} />
-        <button onClick={insert}>
+        <button
+          disabled={!template.isOk}
+          onClick={insert} >
           Insert
         </button>
       </div>
-      <div>
+      {
+        list.data.length === 0 && <p>There are not Notes yet!</p>
+      }
+      <div className="notes-list">
         {
           list.data.map( note => 
-            <div key={note.id}>
+            <div
+              className="note-item"
+              key={note.id}
+              >
               <p 
                 className={note.checked?'note-checked':''}>
                 {note.text}
               </p>
-              <button
-                onClick={()=>list.toggle(note.id)}
-                >
-                Check
-              </button>
-              <button
-                onClick={()=>list.remove(note.id)}>
-                Delete
-              </button>
+              <div className="note-buttons">
+                <button
+                  onClick={()=>list.toggle(note.id)}
+                  >
+                  {
+                    note.checked ? <BsFillLockFill /> : <BsFillUnlockFill />
+                  }
+                </button>
+                <button
+                  onClick={()=>list.remove(note.id)}>
+                  <FaTrash />
+                </button>
+              </div>
             </div>
           )
         }

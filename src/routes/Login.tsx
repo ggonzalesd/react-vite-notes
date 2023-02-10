@@ -12,10 +12,9 @@ function Login() {
 
   const login = (e:{preventDefault:()=>void}) => {
     e.preventDefault()
-    if(!auth?.login(username.value, password.value)) {
-      username.thrower()
-      password.thrower()
-    }
+    auth?.login(username.value, password.value)
+    username.thrower()
+    password.thrower()
   }
 
   return (

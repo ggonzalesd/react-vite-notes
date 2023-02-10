@@ -7,6 +7,7 @@ import Menu from './shared/Menu'
 import './App.sass'
 import Home from './routes/Home'
 import Signin from './routes/Signin'
+import Logout from './routes/Logout'
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
             <Route
               path='/'
               element={applyAuth(<Home />)}
+              />
+            <Route
+              path='/logout'
+              element={applyAuth(<Logout />)}
               />
 
             <Route

@@ -25,10 +25,15 @@ function AuthProvider(props: { children:any }) {
     }
   }
 
+  const logout = () => {
+    setUser(null)
+  }
+
   const auth = {
     user,
     signin,
     login,
+    logout,
   };
   
   return (
